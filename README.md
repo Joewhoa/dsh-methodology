@@ -1,8 +1,10 @@
 # DSH 工作方法论（说明书）
 
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+
 一套在 **DeepSeek Harness（DSH）** 上协作的工程方法论：怎么委派、怎么回写、怎么用技能、怎么避坑、怎么持续进化。
 
-> 本仓库为**私有**方法论快照 + 部署包。不含个人简历/求职内容。
+> 一套**开源**的方法论与技能集，`git clone` 即可部署复用；内容已脱敏（不含个人简历 / 求职内容 / 密钥 / 本地基础设施）。
 
 ## 一、解决什么问题
 
@@ -41,21 +43,18 @@
 | 4 上下文结构化 | 暂缓（规模不够再拆） |
 | 5 订阅 / 主动 | 暂缓 |
 
-## 五、当前进度（2026-09-11）
+## 五、怎么部署到新机器
 
-- GitHub 三项目上线并维护：subject-recolor（README 首页化 + `新方案交接落地`→`delivery/` 重命名）、billing-reconcile、dsh-roam。
-- 方法论进化：阶段 1 达成；阶段 2 实测失败后重定义（见上表）；启动引导缺口已补（预设 persona 加「新会话先读交接总控」）。
-- 踩坑已记录：git 代理、PowerShell BOM、会话目录改名、技能面板扫描范围等 8 条。
-
-## 六、怎么部署到新机器
-
-1. 下载 `dsh-methodology.zip`。
-2. 解压，把 `skills/` 下 5 个文件夹复制到 `~/.dsh/skills/`。
+1. 克隆仓库：`git clone https://github.com/Joewhoa/dsh-methodology.git`。
+2. 把 `skills/` 下 5 个文件夹复制到 `~/.dsh/skills/`（Linux/macOS；Windows 为 `C:\Users\<你>\.dsh\skills\`）。
 3. 让新机器的 AI 读 `START_HERE.md`（零上下文 AI 也能照做）。
-4. 把 `方法论版-交接总控.md` 里的路径改成实际路径。
+4. 把 `方法论版-交接总控.md` 里的 `<...>` 占位改成实际路径 / 项目。
 
-## 七、仓库内容说明
+## 六、仓库内容说明
 
 - `README.md` —— 本说明书。
-- `dsh-methodology.zip` —— 完整部署包（技能 + 方法论 + 部署提示词）。
-- `START_HERE.md`、`方法论版-交接总控.md`、`delegate-goal-契约.md` —— zip 内同一份内容的展开版，方便直接在线看。
+- `skills/` —— 5 个技能（delegate-goal / grill-me / tdd / cordis-plugin-development / editing-cordis-compositions），复制到 `~/.dsh/skills/` 即生效。
+- `START_HERE.md` —— 零上下文启动提示词，新机器 AI 照做即可。
+- `方法论版-交接总控.md` —— 方法论单一真相源（通用模板，`<...>` 处按实际填写）。
+- `delegate-goal-契约.md` —— 委托纪律的 Goal 契约 / 回执 / 风险分级模板。
+- `LICENSE` —— MIT 协议。
