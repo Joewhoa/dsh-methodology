@@ -3,6 +3,8 @@ name: delegate-goal
 description: Use when delegating a task to a subagent, forked subagent, Ralph loop, or workflow and you need a compact goal contract, an evidence-bearing execution receipt, and explicit risk grading.
 ---
 
+> 来源：本技能的「Goal 契约 + 证据回执 + 风险分级」模型借鉴 [tt-a1i/matt-skills-with-to-goal](https://github.com/tt-a1i/matt-skills-with-to-goal) 的 `to-goal` / `goal-crafter` / `spec-executor`，并按 DSH 的 subagent / subagent_fork / ralph / workflow 机制重新表述与落地；实现为独立撰写。
+
 # Delegate Goal
 
 当任务需要进入独立执行线程时，用紧凑、可验证的契约代替自由格式提示。
@@ -12,7 +14,7 @@ description: Use when delegating a task to a subagent, forked subagent, Ralph lo
 委派前出现任一情况时使用本 skill：
 
 - 任务长期运行，或会显著污染父线程上下文。
-- 工作可能跨 session、日期、模型或 provider 延续。
+- 工作可能跨 session、日期、模型或 provider 延续。（这里的「跨 session」指委派的任务在独立线程/另一会话中执行，不指本会话的记忆延续——记忆延续靠「交接总控.md」文件。）
 - 工作可以拆成多个并行切片。
 - 父线程上下文已经过长或噪声过多。
 

@@ -4,6 +4,8 @@ description: 当用户要通过高强度连续追问来审视并磨砺计划、�
 disable-model-invocation: false
 ---
 
+> 来源：本技能是 [mattpocock/skills](https://github.com/mattpocock/skills) `skills/productivity/grilling/` 的中文译本（上游 `grill-me` 仅为指向 `grilling` 的薄壳），含少量 DSH 环境适配；上游 MIT License，Copyright (c) 2026 Matt Pocock。详见仓库根 `THIRD_PARTY_NOTICES.md`。
+
 # 追问到底
 
 持续、不留情面地访谈用户，直到双方形成共同理解。将问题映射为一棵**设计树**：每项决策都会分支出依赖它的后续决策。
@@ -26,6 +28,6 @@ disable-model-invocation: false
 
 用户每回答一轮，都会重塑这棵树：已经确定的决策会把前沿向外推进，并解锁依赖它们的问题。重新计算前沿，再提出下一轮问题。如果某个问题的答案依赖本轮中另一个尚未解决的问题，就应把它放到**后续**轮次，而不是当前轮次。
 
-查明**事实**是你的职责，绝不能推给用户。如果前沿问题需要文件系统、工具或其他环境事实，应使用 DSH 的 `subagent` 或 `subagent_fork` 派出子 agent 查明，而不是询问用户能够自行查证的信息。不要因此阻塞全部访谈：正在进行的探索属于尚未确定的前置条件，只有依赖该结果的问题需要等待子 agent 回报；当前前沿中的其余问题仍应立即提出。**决策**则属于用户：逐项交给用户判断并等待回答。若需要联网查证，使用 `web_search`；多 agent 大规模编排使用 `workflow`；跨 session 延续使用 `delegate-goal`；长期目标使用 goal 工具。
+查明**事实**是你的职责，绝不能推给用户。如果前沿问题需要文件系统、工具或其他环境事实，应使用 DSH 的 `subagent` 或 `subagent_fork` 派出子 agent 查明，而不是询问用户能够自行查证的信息。不要因此阻塞全部访谈：正在进行的探索属于尚未确定的前置条件，只有依赖该结果的问题需要等待子 agent 回报；当前前沿中的其余问题仍应立即提出。**决策**则属于用户：逐项交给用户判断并等待回答。若需要联网查证，使用 `web_search`；多 agent 大规模编排使用 `workflow`；委派任务给子 agent / 隔壁会话使用 `delegate-goal`；跨 session 记忆延续靠「交接总控.md」文件；长期目标使用 goal 工具。
 
 当前沿为空时，会话才算结束：设计树的每个分支都已走过，不存在任何未明说的假设。在用户确认双方已经形成共同理解之前，不要据此采取行动。

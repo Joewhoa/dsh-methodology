@@ -3,6 +3,8 @@ name: tdd
 description: 当用户希望以测试优先方式开发功能或修复缺陷、提到“红-绿-重构”，或需要集成测试时使用。
 ---
 
+> 来源：本技能是 [mattpocock/skills](https://github.com/mattpocock/skills) `skills/engineering/tdd/` 的中文译本（SKILL.md / tests.md / mocking.md），含少量 DSH 环境适配；上游 MIT License，Copyright (c) 2026 Matt Pocock。详见仓库根 `THIRD_PARTY_NOTICES.md`。
+
 # 测试驱动开发
 
 TDD 是红 → 绿循环。本 skill 是让这个循环产出值得长期保留的测试的参考指南：什么是好测试、测试应该放在哪里、有哪些反模式，以及循环应遵守哪些规则。每一节都适用于每一次循环；应在循环开始前和进行中查阅，而不是等结束后再看。

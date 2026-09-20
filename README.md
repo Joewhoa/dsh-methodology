@@ -58,3 +58,10 @@
 - `方法论版-交接总控.md` —— 方法论单一真相源（通用模板，`<...>` 处按实际填写）。
 - `delegate-goal-契约.md` —— 委托纪律的 Goal 契约 / 回执 / 风险分级模板。
 - `LICENSE` —— MIT 协议。
+- `THIRD_PARTY_NOTICES.md` —— 第三方来源与许可声明。
+
+## 七、来源与致谢
+
+- `skills/tdd/` 与 `skills/grill-me/` 是 [mattpocock/skills](https://github.com/mattpocock/skills)（MIT，Copyright (c) 2026 Matt Pocock）的中文译本，含少量 DSH 环境适配。
+- `skills/delegate-goal/` 的「Goal 契约 + 证据回执 + 风险分级」模型借鉴 [tt-a1i/matt-skills-with-to-goal](https://github.com/tt-a1i/matt-skills-with-to-goal)（MIT），按 DSH 机制重新落地。
+- 详细对照见 `THIRD_PARTY_NOTICES.md`。
