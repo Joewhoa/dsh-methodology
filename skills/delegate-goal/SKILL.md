@@ -20,7 +20,7 @@ description: Use when delegating a task to a subagent, forked subagent, Ralph lo
 
 ## 使用流程
 
-1. 先选择满足任务所需的最低风险等级。
+1. 先按「风险分级」从两个维度定档（各取最低够用的一档）。
 2. 按 `templates/goal-contract.md` 压缩目标，将完整契约传给子代理，禁止只给松散提示。
 3. 明确固定基线、受保护文件、执行顺序、可独立判定的完成标准和授权边界。
 4. 要求子代理按 `templates/receipt.md` 回传证据型 receipt；未知或跳过项必须显式标记。
@@ -28,18 +28,26 @@ description: Use when delegating a task to a subagent, forked subagent, Ralph lo
 
 ## 风险分级
 
-选择足够完成任务的最低等级，不机械升到最高档。
+委派前从两个**独立**维度定级，再决定执行能力。两维分开看，不要混成一个「难度」。
 
-**Capability**
+**维度 1 · 认知难度（Capability）——任务本身有多难**
 
 - `Lightweight`：机械编辑或小范围局部修改。
 - `Standard`：常规功能或缺陷工作，默认值。
-- `Advanced`：根因分析、安全敏感工作、迁移、并发或深度调查。
+- `Advanced`：根因分析、安全敏感、迁移、并发或深度调查。
 
-**Intensity**
+**维度 2 · 后果严重度（Consequence）——改错了代价多大**
 
-- `Low`
-- `Medium`：默认值。
-- `High`
+- `Low`：只影响临时/本地产物，出错易回滚。
+- `Medium`：默认值；影响本仓库代码或文档，有 git 历史可回退。
+- `High`：涉及真实服务、生产数据、密钥、跨仓库或不可逆操作，出错难回滚。
 
-仅在目标模型已经明确时，才将等级映射到 `subagent`、`subagent_fork`、`ralph` 或 `workflow` 的 provider/model override；重视可移植性时保持契约与模型无关。
+**定档规则**
+
+1. 两维各取**最低够用**的一档，不机械升到最高档。
+2. 后果严重度 ≥ 难度时，以后果为准（哪怕机械编辑，碰生产数据也是 High）。
+3. 任一维度为 `High`，父线程必须逐条核验 receipt，不采信叙述性「完成」。
+
+**映射到执行能力（可选）**
+
+仅在目标模型明确时，才把「难度 × 后果」组合映射到 `subagent`、`subagent_fork`、`ralph` 或 `workflow` 的 provider/model override（例如 `Advanced × High` → 更强模型 + 更严验收）；重视可移植性时保持契约与模型无关，只写两个维度的档位。
