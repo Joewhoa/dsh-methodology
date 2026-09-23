@@ -1,6 +1,6 @@
 ---
 name: code-acceptance
-description: Use when a non-coding user asks to accept, verify, or judge AI-produced code, feature changes, scripts, or automation — runs a fixed 6-item check and reports in a fixed 5-section format that forces "verified (with evidence)" / "not verified" / "cannot verify" to be kept separate, preventing false all-green reports.
+description: 当用户（不写代码）要求验收 AI 写的代码、功能改动、脚本或自动化产出时使用。本技能不改代码，只做验证与如实汇报：按固定 6 条清单检查，并按固定 5 栏格式输出，强制区分「已验证（带证据）」「没验的」「验不了的」，防止「假全绿」——不得把「我认为应该没问题」写成「已验证」，不得用「都检查过了」替代具体证据。触发词：验收、验一下、帮我看看做得对不对、能不能上、检查这次改动。Use when a non-coding user asks to accept, verify, or judge AI-produced code, feature changes, scripts, or automation.
 ---
 
 > 来源：本项目原创（未借鉴外部实现）。
@@ -19,6 +19,19 @@ description: Use when a non-coding user asks to accept, verify, or judge AI-prod
 - 用户说「验收一下」「验一下这次改动」「帮我看看 AI 干得对不对」「能不能上」
 - AI 刚交付代码 / 功能改动 / 脚本 / 自动化产出，用户需要判断它行不行
 - 上线前需要一份「我实际验过什么、还没验什么」的说明
+
+## 什么场景不适用（先判断，别硬套）
+
+本 skill 的检查清单建立在「**能跑、能看输出**」这个前提上。以下场景**不要套**这 6 条清单，会卡住或误报：
+
+| 不适用场景 | 为什么 | 该换成什么 |
+|---|---|---|
+| **纯文档 / 文案 / 说明**（简历、README、汇报材料） | 没有「命令 + 实际输出」可贴，第 2 条检查无证据来源 | 换成「事实核查」：逐条对原文/出处核真伪，别套「可复现命令」 |
+| **还没写的方案 / 设计 / 计划** | 没有成品可验，只有想法 | 换 `grill-me`：高强度追问把方案逼出漏洞 |
+| **纯视觉 / 审美判断**（「这个配色好不好看」） | 主观偏好，没有「通过/失败」的客观标准 | 直接给判断 + 理由，别硬造验收清单 |
+| **一次性的、扔掉就行的临时脚本** | 风险极低，6 条全查是浪费 | 快速扫一眼有没有危险副作用（删文件/发请求）即可 |
+
+**一句话判据**：如果「怎样算验收通过」没有客观标准、或者根本没有可跑的东西，就先别套本 skill——先问用户到底要验什么、用什么标准，再决定用不用它。
 
 ## 你的角色
 
