@@ -21,15 +21,19 @@
 3. **协调者纯度**：主 agent 只做「定目标 / 拆解 / 委派 / 验收 / 抓假报告」；是否委派看一条判据——执行上下文能否完整写进 Goal 契约，能就委派、不能就自己做。
 4. **目标驱动**：长期/跨步骤目标用 goal 工具挂起（**会话内有效**），短任务不必挂。
 
-## 三、5 个技能
+## 三、6 个技能
 
 | 技能 | 用途 | 调用方式 |
 |---|---|---|
 | `delegate-goal` | 委托纪律（契约 + 回执 + 风险分级） | 自动 |
+| `code-acceptance` | 验收纪律（6 条检查 + 5 栏汇报，防「假全绿」） | 自动 |
 | `grill-me` | 面试 / 方案高强度追问 | 手动 |
 | `tdd` | 测试优先开发 / 修 bug | 自动 |
 | `cordis-plugin-development` | 写 / 改动态 Cordis 插件 | 自动 |
 | `editing-cordis-compositions` | 编辑 agent 预设 / Cordis 组合 | 自动 |
+
+> `delegate-goal` 与 `code-acceptance` 是一对：**前者管「怎么把活交出去」，后者管「交回来的活怎么验」。**
+> 两者都是第 1 条「委托纪律」的技能化落地（委派端 + 验收端）。
 
 ## 四、进化路线（参考 Cursor 的 Projects 功能）
 
@@ -46,14 +50,14 @@
 ## 五、怎么部署到新机器
 
 1. 克隆仓库：`git clone https://github.com/Joewhoa/dsh-methodology.git`。
-2. 把 `skills/` 下 5 个文件夹复制到 `~/.dsh/skills/`（Linux/macOS；Windows 为 `C:\Users\<你>\.dsh\skills\`）。
+2. 把 `skills/` 下 6 个文件夹复制到 `~/.dsh/skills/`（Linux/macOS；Windows 为 `C:\Users\<你>\.dsh\skills\`）。
 3. 让新机器的 AI 读 `START_HERE.md`（零上下文 AI 也能照做）。
 4. 把 `方法论版-交接总控.md` 里的 `<...>` 占位改成实际路径 / 项目。
 
 ## 六、仓库内容说明
 
 - `README.md` —— 本说明书。
-- `skills/` —— 5 个技能（delegate-goal / grill-me / tdd / cordis-plugin-development / editing-cordis-compositions），复制到 `~/.dsh/skills/` 即生效。
+- `skills/` —— 6 个技能（delegate-goal / code-acceptance / grill-me / tdd / cordis-plugin-development / editing-cordis-compositions），复制到 `~/.dsh/skills/` 即生效。
 - `START_HERE.md` —— 零上下文启动提示词，新机器 AI 照做即可。
 - `方法论版-交接总控.md` —— 方法论单一真相源（通用模板，`<...>` 处按实际填写）。
 - `delegate-goal-契约.md` —— 委托纪律的 Goal 契约 / 回执 / 风险分级模板。
@@ -64,4 +68,5 @@
 
 - `skills/tdd/` 与 `skills/grill-me/` 是 [mattpocock/skills](https://github.com/mattpocock/skills)（MIT，Copyright (c) 2026 Matt Pocock）的中文译本，含少量 DSH 环境适配。
 - `skills/delegate-goal/` 的「Goal 契约 + 证据回执 + 风险分级」模型借鉴 [tt-a1i/matt-skills-with-to-goal](https://github.com/tt-a1i/matt-skills-with-to-goal)（MIT），按 DSH 机制重新落地。
+- `skills/code-acceptance/` 为**本项目原创**（未借鉴外部实现），依据本仓库第 1 条「委托纪律」的验收端撰写。
 - 详细对照见 `THIRD_PARTY_NOTICES.md`。
