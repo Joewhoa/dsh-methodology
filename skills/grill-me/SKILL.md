@@ -1,7 +1,6 @@
 ---
 name: grill-me
-description: 当用户要通过高强度连续追问来审视并磨砺计划、决策或想法时使用。
-disable-model-invocation: false
+description: 当用户要通过高强度连续追问来审视并磨砺计划、决策或想法时使用。触发词：审视一下方案靠不靠谱、看看这件事是否可行、这件事应该怎么推进/部署/执行。
 ---
 
 > 来源：本技能是 [mattpocock/skills](https://github.com/mattpocock/skills) `skills/productivity/grilling/` 的中文译本（上游 `grill-me` 仅为指向 `grilling` 的薄壳），含少量 DSH 环境适配；上游 MIT License，Copyright (c) 2026 Matt Pocock。详见仓库根 `THIRD_PARTY_NOTICES.md`。

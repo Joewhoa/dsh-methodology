@@ -27,8 +27,8 @@
 | 技能 | 何时用 |
 |---|---|
 | `delegate-goal` | 委派任务给子 agent / ralph / workflow 时 |
-| `code-acceptance` | AI 交付的代码 / 改动 / 脚本要验收时（手动） |
-| `grill-me` | 用户点名要面试/方案高强度追问（手动） |
+| `code-acceptance` | AI 交付的代码 / 改动 / 脚本要验收时（自动） |
+| `grill-me` | 用户要面试/方案高强度追问（自动） |
 | `tdd` | 测试优先开发或修 bug（自动） |
 | `cordis-plugin-development` | 写/改动态 Cordis 插件 |
 | `editing-cordis-compositions` | 编辑 agent 预设 / Cordis 组合 |

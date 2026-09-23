@@ -26,8 +26,8 @@
 | 技能 | 用途 | 调用方式 |
 |---|---|---|
 | `delegate-goal` | 委托纪律（契约 + 回执 + 风险分级） | 自动 |
-| `code-acceptance` | 验收纪律（6 条检查 + 5 栏汇报，防「假全绿」） | 手动 |
-| `grill-me` | 面试 / 方案高强度追问 | 手动 |
+| `code-acceptance` | 验收纪律（6 条检查 + 5 栏汇报，防「假全绿」） | 自动 |
+| `grill-me` | 面试 / 方案高强度追问 | 自动 |
 | `tdd` | 测试优先开发 / 修 bug | 自动 |
 | `cordis-plugin-development` | 写 / 改动态 Cordis 插件 | 自动 |
 | `editing-cordis-compositions` | 编辑 agent 预设 / Cordis 组合 | 自动 |
